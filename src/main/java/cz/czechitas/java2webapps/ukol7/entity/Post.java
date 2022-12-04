@@ -12,7 +12,7 @@ import java.util.Date;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String slug;
     private String author;
@@ -21,11 +21,24 @@ public class Post {
     private String body;
     private LocalDate published;
 
-    public Integer getId() {
+    public Post() {
+    }
+
+    public Post(Long id, String slug, String author, String title, String perex, String body, LocalDate published) {
+        this.id = id;
+        this.slug = slug;
+        this.author = author;
+        this.title = title;
+        this.perex = perex;
+        this.body = body;
+        this.published = published;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
